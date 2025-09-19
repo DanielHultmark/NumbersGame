@@ -16,6 +16,7 @@
                 Random random = new Random();
                 int number = random.Next(1, 21);
                 //Här valde jag att skriva flera rader för att strukturera upp texten så att det inte bara blev en lång string
+                //Även random ligger här för att slumpa fram ett nytt nummer varje gång
 
                 for (int n = 5; n > 0; n--) //Här skapade jag en for-loop som räknar ner från 5 så att användaren bara får 5 försök
                 {
@@ -24,7 +25,7 @@
                     if (!int.TryParse(Console.ReadLine(), out int guess))
                     {
                         Console.WriteLine("Din gissning är utanför 1-20, försök igen!");
-                        n++;
+                        n++;//Lade in n++ så att användare inte blir av med ett försöka om hen matar in tal utanför parametern.
                         continue;
 
                     }
@@ -47,7 +48,7 @@
                     if (n > 1)
                     {
                         Console.WriteLine($"Du har {n - 1} försök kvar");
-                    }
+                    }   //Lade in en extra if sats för att skriva ut hur många försök som är kvar
 
                     else
                     {
